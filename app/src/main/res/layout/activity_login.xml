@@ -134,7 +134,7 @@
                 android:layout_centerHorizontal="true"
                 android:ems="10"
                 android:windowSoftInputMode="stateUnchanged|adjustResize"
-                android:text="@{viewmodel.userId}"
+                android:text="@={viewmodel.userId}"
                 android:inputType="textPersonName"
                 android:shadowColor="@color/white"
                 android:lines="1"
@@ -162,7 +162,7 @@
                 android:layout_centerHorizontal="true"
                 android:ems="10"
                 android:windowSoftInputMode="stateUnchanged|adjustResize"
-                android:text="@{viewmodel.password}"
+                android:text="@={viewmodel.password}"
                 android:inputType="textPassword"
                 android:shadowColor="@color/white"
                 android:lines="1"
@@ -203,7 +203,9 @@
                 app:layout_constraintTop_toTopOf="@id/guideline_login_top"
                 app:layout_constraintLeft_toLeftOf="@id/guideline_description_left"
                 app:layout_constraintRight_toRightOf="@id/guideline_editText_right"
-                app:layout_constraintHeight_percent="0.1">
+                app:layout_constraintHeight_percent="0.1"
+                android:onClick="@{() -> viewmodel.login()}"
+                >
 
                 <TextView
                     android:id="@+id/btn_login_text"

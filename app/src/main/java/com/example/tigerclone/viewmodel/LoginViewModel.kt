@@ -1,18 +1,22 @@
 package com.example.tigerclone.viewmodel
 
-import androidx.lifecycle.LiveData
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class LoginViewModel : ViewModel() {
 
-    private val _userId = MutableLiveData<String>("test@lavie")
-    private val _password = MutableLiveData<String>("test")
-    private val _fieldId= MutableLiveData<String>("AKG003")
-    private val _isTest = MutableLiveData<Boolean>(true)
+    val userId = MutableLiveData<String>("test@lavie")
+    val password = MutableLiveData<String>("test")
+    val fieldId = MutableLiveData<String>("AKG003")
+    val isTest = MutableLiveData<Boolean>(true)
 
-    var userId: LiveData<String> = _userId
-    var password: LiveData<String> = _password
-    var fieldId: LiveData<String> = _fieldId
-    var isTest: LiveData<Boolean> = _isTest
+    fun login() {
+        Log.d("Login", "userId: ${userId.value}, password: ${password.value}, fieldId: ${fieldId.value}, isTest: ${isTest.value}")
+    }
+
+    // TODO: AppData에 UserId, FieldId, IsTest 값 저장
+    // TODO: StaticValue에 넣을 값 구별
+    // TODO: Login 구현
+    // TODO: API repository 연결
 }

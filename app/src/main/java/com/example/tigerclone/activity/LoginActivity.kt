@@ -16,9 +16,11 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
 
         binding.lifecycleOwner = this
         binding.viewmodel = viewModel
+
     }
 }
